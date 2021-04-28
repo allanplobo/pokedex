@@ -11,7 +11,7 @@ export class PokeapiService {
   ) { }
 
   getPokemons() {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit10');
+    return this.http.get('https://pokeapi.co/api/v2/pokemon');
   }
 
   getPokemonDetails(name: string) {

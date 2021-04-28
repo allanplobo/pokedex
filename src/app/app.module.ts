@@ -6,9 +6,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
-import { TopbarComponent } from './components/topbar/topbar.component';
-import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
-
+import { TopbarModule } from './components/topbar/topbar.module';
+import { PokemonListModule } from './pages/pokemon-list/pokemon-list.module';
 
 export function CreateTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -17,14 +16,14 @@ export function CreateTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    PokemonListComponent,
-    TopbarComponent
+    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    TopbarModule,
+    PokemonListModule,
     TranslateModule.forRoot()
   ],
   providers: [],
