@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
@@ -19,10 +19,12 @@ export function CreateTranslateLoader(http: HttpClient) {
     AppComponent,
     CardComponent,
     PokemonListComponent,
-    TopbarComponent],
+    TopbarComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     TranslateModule.forRoot()
   ],
   providers: [],
