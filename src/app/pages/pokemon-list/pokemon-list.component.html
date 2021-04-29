@@ -11,13 +11,32 @@
 </app-topbar>
 <div class="container">
   <div class="row">
-    <div
-      *ngFor="let pokemon of pokemons$ | async"
-      class="col-12 col-sm-6 col-lg-3"
-    >
-      <p>{{ pokemon.species.name }}</p>
-      <img src="{{ pokemon.sprites.front_default }}" />
-      <a href="{{ pokemon.species.url }}" target="_blank">More details</a>
-    </div>
+    <ng-template #loading>
+      <div class="spinner-border text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </ng-template>
+    <ng-container *ngIf="pokemons$ | async as pokemons; else loading">
+      <ng-container *ngIf="pokemons.length > 0; else noPokemonFound">
+        <app-card
+          *ngFor="let pokemon of pokemons"
+          [name]="pokemon.species.name"
+          [image]="pokemon.sprites.front_default"
+          [url]="pokemon.species.url"
+          class="col-12 col-sm-6 col-lg-3"
+        >
+        </app-card>
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <pagination
+              [maxSize]="8"
+              [totalItems]="this.totalItems"
+              (pageChanged)="pageChanged($event)"
+            ></pagination>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-template #noPokemonFound> Not found </ng-template>
   </div>
 </div>

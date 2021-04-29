@@ -1,1 +1,29 @@
-<p>card works!</p>
+<div class="card shadow-sm">
+  <div class="favorite-div">
+    <ng-container *ngIf="favorite; else notFavorite">
+      <img
+        class="favorite-heart"
+        src="../../../assets/icons/red-heart.png"
+        alt=""
+        (click)="setFavorite(false)"
+      />
+    </ng-container>
+    <ng-template #notFavorite>
+      <img
+        class="favorite-heart"
+        src="../../../assets/icons/heart.png"
+        alt=""
+        (click)="setFavorite(true)"
+      />
+    </ng-template>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <img src="{{ image }}" alt="" class="pokemon-picture" />
+    </div>
+    <div class="col-12 col-sm-6">
+      <p class="pokemon-name">{{ name }}</p>
+    </div>
+  </div>
+</div>

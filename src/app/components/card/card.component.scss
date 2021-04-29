@@ -1,0 +1,24 @@
+.card {
+  position: relative;
+  border-radius: 8px;
+  padding: 8px;
+
+  .favorite-div {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    height: 28px;
+    .favorite-heart {
+      width: 28px;
+    }
+  }
+
+  .pokemon-name {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 26px;
+    @media (min-width: 992px) {
+      font-size: 14px;
+    }
+  }
+}

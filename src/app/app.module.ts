@@ -5,7 +5,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './components/card/card.component';
 import { TopbarModule } from './components/topbar/topbar.module';
 import { PokemonListModule } from './pages/pokemon-list/pokemon-list.module';
 
@@ -15,8 +14,7 @@ export function CreateTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

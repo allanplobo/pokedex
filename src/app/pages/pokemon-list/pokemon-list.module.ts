@@ -1,9 +1,11 @@
+import { CardModule } from './../../components/card/card.module';
 import { PokemonListRoutingModule } from './pokemon-list.routing';
 import { TopbarModule } from './../../components/topbar/topbar.module';
 import { PokemonListComponent } from './pokemon-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 @NgModule({
   declarations: [
     PokemonListComponent
@@ -12,7 +14,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     TopbarModule,
-    PokemonListRoutingModule
+    CardModule,
+    PokemonListRoutingModule,
+    PaginationModule,
+    FormsModule
   ]
 })
 export class PokemonListModule { }

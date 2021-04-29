@@ -12,8 +12,4 @@ export class TopbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  alert() {
-    alert('Olá mundo');
-  }
-
 }
