@@ -11,3 +11,21 @@ body {
 p {
   margin: 0;
 }
+
+.page-item.active .page-link {
+  background-color: red;
+  border-color: red;
+}
+
+.pagination-page {
+  &.page-item {
+    .page-link {
+      color: red;
+    }
+    &.active {
+      .page-link {
+        color: white;
+      }
+    }
+  }
+}
